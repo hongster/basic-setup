@@ -1,0 +1,21 @@
+---
+- name: Install colordiff, git, vim
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - colordiff
+      - git
+      - vim
+- name: Add useful aliases
+  copy:
+    src: files/etc/profile.d/alias.sh
+    dest: /etc/profile.d/alias.sh
+- name: Add /usr/local/bin to env path
+  copy:
+    src: files/etc/profile.d/paths.sh
+    dest: /etc/profile.d/paths.sh
+- name: Overwrite vimrc
+  copy:
+    src: files/etc/vimrc
+    dest: /etc/vimrc

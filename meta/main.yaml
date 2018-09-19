@@ -1,0 +1,6 @@
+---
+dependencies:
+  - role: geerlingguy.repo-epel
+  - role: geerlingguy.ntp
+    vars:
+      - ntp_timezone: Asia/Kuala_Lumpur
